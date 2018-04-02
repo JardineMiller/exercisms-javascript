@@ -27,6 +27,20 @@ class LinkedList {
     this.length++;
   }
 
+  unshift(number) {
+    let newNode = new Node(number);
+
+    if(this.length == 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head.next = newNode;
+      this.head = newNode;
+    }
+    this.length++;
+  }
+
   pop() {
     let removed = this.tail;
     if(this.length == 1) {
